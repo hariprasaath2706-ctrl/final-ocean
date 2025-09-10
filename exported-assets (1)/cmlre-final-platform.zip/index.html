@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMLRE - Enhanced Marine Data Integration Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Animated Ocean Background -->
+    <div class="ocean-background">
+        <div class="fish fish-1">🐠</div>
+        <div class="fish fish-2">🐟</div>
+        <div class="fish fish-3">🦈</div>
+        <div class="fish fish-4">🐡</div>
+        <div class="fish fish-5">🐙</div>
+        <div class="fish fish-6">🦑</div>
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>CMLRE</h2>
+                <span>Enhanced Marine Platform</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#dashboard" class="nav-link active" data-section="dashboard">Smart Dashboard</a></li>
+                <li><a href="#map-center" class="nav-link" data-section="map-center">Map Center</a></li>
+                <li><a href="#data-explorer" class="nav-link" data-section="data-explorer">Data Explorer</a></li>
+                <li><a href="#species-manager" class="nav-link" data-section="species-manager">Species Manager</a></li>
+                <li><a href="#station-control" class="nav-link" data-section="station-control">Station Control</a></li>
+                <li><a href="#analytics" class="nav-link" data-section="analytics">Analytics Hub</a></li>
+                <li><a href="#reports" class="nav-link" data-section="reports">Report Center</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Smart Dashboard Section -->
+        <section id="dashboard" class="content-section active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Enhanced Marine Data Integration Platform</h1>
+                    <p>AI-powered real-time marine ecosystem monitoring with advanced analytics and interactive data exploration</p>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Active Stations</div>
+                            <div class="stat-trend trend-up">↗ +3 this month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="1247">0</div>
+                            <div class="stat-label">Species Catalogued</div>
+                            <div class="stat-trend trend-up">↗ +25 new</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="15420">0</div>
+                            <div class="stat-label">Data Points Today</div>
+                            <div class="stat-trend trend-stable">→ Normal flow</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="94">0</div>
+                            <div class="stat-label">Data Quality %</div>
+                            <div class="stat-trend trend-up">↗ Excellent</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h3>🚨 Real-Time Alerts</h3>
+                    <div class="alert-list" id="alert-list">
+                        <div class="alert-item alert-medium">
+                            <div class="alert-icon">⚠️</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Temperature Anomaly</div>
+                                <div class="alert-desc">Station CMLRE_003: 3.2°C above normal</div>
+                                <div class="alert-time">12 minutes ago</div>
+                            </div>
+                            <button class="alert-action btn btn--sm">Investigate</button>
+                        </div>
+                        <div class="alert-item alert-high">
+                            <div class="alert-icon">🔧</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Equipment Maintenance</div>
+                                <div class="alert-desc">CTD sensor calibration required</div>
+                                <div class="alert-time">1 hour ago</div>
+                            </div>
+                            <button class="alert-action btn btn--sm">Schedule</button>
+                        </div>
+                        <div class="alert-item alert-low">
+                            <div class="alert-icon">📊</div>
+                            <div class="alert-content">
+                                <div class="alert-title">Data Quality Check</div>
+                                <div class="alert-desc">Questionable phosphate readings</div>
+                                <div class="alert-time">2 hours ago</div>
+                            </div>
+                            <button class="alert-action btn btn--sm">Review</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <h3>🌊 Live Ocean Parameters</h3>
+                    <div class="param-grid">
+                        <div class="param-item">
+                            <div class="param-icon">🌡️</div>
+                            <div class="param-info">
+                                <span class="param-label">Temperature</span>
+                                <span class="param-value" id="temp-value">28.5°C</span>
+                                <div class="param-mini-chart"></div>
+                            </div>
+                        </div>
+                        <div class="param-item">
+                            <div class="param-icon">🧂</div>
+                            <div class="param-info">
+                                <span class="param-label">Salinity</span>
+                                <span class="param-value" id="salinity-value">35.2 PSU</span>
+                                <div class="param-mini-chart"></div>
+                            </div>
+                        </div>
+                        <div class="param-item">
+                            <div class="param-icon">⚗️</div>
+                            <div class="param-info">
+                                <span class="param-label">pH Level</span>
+                                <span class="param-value" id="ph-value">8.1</span>
+                                <div class="param-mini-chart"></div>
+                            </div>
+                        </div>
+                        <div class="param-item">
+                            <div class="param-icon">💨</div>
+                            <div class="param-info">
+                                <span class="param-label">Dissolved O₂</span>
+                                <span class="param-value" id="do-value">6.8 mg/L</span>
+                                <div class="param-mini-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>🔍 Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="action-btn" id="global-search-btn">
+                            <div class="action-icon">🔍</div>
+                            <div class="action-text">Global Search</div>
+                        </button>
+                        <button class="action-btn" id="data-quality-btn">
+                            <div class="action-icon">📊</div>
+                            <div class="action-text">Data Quality</div>
+                        </button>
+                        <button class="action-btn" id="export-data-btn">
+                            <div class="action-icon">💾</div>
+                            <div class="action-text">Export Data</div>
+                        </button>
+                        <button class="action-btn" id="generate-report-btn">
+                            <div class="action-icon">📄</div>
+                            <div class="action-text">Generate Report</div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>📈 System Status</h3>
+                    <div class="status-grid">
+                        <div class="status-item">
+                            <span class="status-dot status-online"></span>
+                            <span class="status-text">Data Ingestion</span>
+                            <span class="status-value">99.7%</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot status-online"></span>
+                            <span class="status-text">Station Network</span>
+                            <span class="status-value">47/50</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot status-warning"></span>
+                            <span class="status-text">eDNA Processing</span>
+                            <span class="status-value">Delayed</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot status-online"></span>
+                            <span class="status-text">API Response</span>
+                            <span class="status-value">< 200ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Center Section -->
+        <section id="map-center" class="content-section">
+            <div class="section-header">
+                <h2>🗺️ Interactive Map Center</h2>
+                <div class="section-controls">
+                    <select id="map-type-selector" class="form-control">
+                        <option value="temperature">Temperature Heat Map</option>
+                        <option value="population">Population Density</option>
+                        <option value="biodiversity">Biodiversity Hotspots</option>
+                        <option value="activity">Station Activity</option>
+                    </select>
+                    <button class="btn btn--primary" id="refresh-map">Refresh Map</button>
+                </div>
+            </div>
+
+            <div class="map-center-grid">
+                <div class="map-main-card">
+                    <h3>🌊 Interactive Ocean Map</h3>
+                    <div class="map-container" id="main-map">
+                        <div class="map-overlay">
+                            <div class="map-legend" id="map-legend">
+                                <h4>Temperature (°C)</h4>
+                                <div class="legend-scale">
+                                    <div class="legend-item"><span class="legend-color" style="background: #1FB8CD;"></span> 24-26°C</div>
+                                    <div class="legend-item"><span class="legend-color" style="background: #FFC185;"></span> 26-28°C</div>
+                                    <div class="legend-item"><span class="legend-color" style="background: #B4413C;"></span> 28-30°C</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="map-markers" id="map-markers">
+                            <div class="map-marker temperature-marker" data-lat="13.992642" data-lng="96.117954" data-value="28.5" data-station="CMLRE_001" style="top: 60%; left: 70%;">
+                                <div class="marker-circle hot"></div>
+                                <div class="marker-tooltip">
+                                    <strong>Kochi Coastal</strong><br>
+                                    28.5°C<br>
+                                    <span class="station-id">CMLRE_001</span>
+                                </div>
+                            </div>
+                            <div class="map-marker temperature-marker" data-lat="23.211429" data-lng="90.478852" data-value="26.2" data-station="CMLRE_002" style="top: 30%; left: 80%;">
+                                <div class="marker-circle medium"></div>
+                                <div class="marker-tooltip">
+                                    <strong>Bay of Bengal Deep</strong><br>
+                                    26.2°C<br>
+                                    <span class="station-id">CMLRE_002</span>
+                                </div>
+                            </div>
+                            <div class="map-marker temperature-marker" data-lat="19.711903" data-lng="95.245469" data-value="24.8" data-station="CMLRE_003" style="top: 45%; left: 65%;">
+                                <div class="marker-circle cool"></div>
+                                <div class="marker-tooltip">
+                                    <strong>Arabian Sea</strong><br>
+                                    24.8°C<br>
+                                    <span class="station-id">CMLRE_003</span>
+                                </div>
+                            </div>
+                            <div class="map-marker temperature-marker" data-lat="15.255" data-lng="73.751" data-value="27.8" data-station="CMLRE_004" style="top: 55%; left: 40%;">
+                                <div class="marker-circle warm"></div>
+                                <div class="marker-tooltip">
+                                    <strong>Goa Shelf</strong><br>
+                                    27.8°C<br>
+                                    <span class="station-id">CMLRE_004</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-controls-card">
+                    <h3>🎛️ Map Controls</h3>
+                    <div class="control-section">
+                        <label class="form-label">Display Options:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="show-stations" checked> Show Stations</label>
+                            <label><input type="checkbox" id="show-heat-zones" checked> Heat Zones</label>
+                            <label><input type="checkbox" id="show-currents"> Ocean Currents</label>
+                            <label><input type="checkbox" id="show-bathymetry"> Bathymetry</label>
+                        </div>
+                    </div>
+                    <div class="control-section">
+                        <label class="form-label">Time Range:</label>
+                        <select id="map-time-range" class="form-control">
+                            <option value="current">Current Data</option>
+                            <option value="24h">Last 24 Hours</option>
+                            <option value="7d">Last 7 Days</option>
+                            <option value="30d">Last 30 Days</option>
+                        </select>
+                    </div>
+                    <div class="control-section">
+                        <label class="form-label">Data Layer Opacity:</label>
+                        <input type="range" id="opacity-slider" min="0" max="100" value="70" class="form-control">
+                        <span id="opacity-value">70%</span>
+                    </div>
+                </div>
+
+                <div class="map-stats-card">
+                    <h3>📊 Map Statistics</h3>
+                    <div class="stats-grid" id="map-statistics">
+                        <div class="stat-item">
+                            <div class="stat-icon">🌡️</div>
+                            <div class="stat-details">
+                                <div class="stat-label">Avg Temperature</div>
+                                <div class="stat-value" id="avg-temperature">26.8°C</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">🐟</div>
+                            <div class="stat-details">
+                                <div class="stat-label">Total Species</div>
+                                <div class="stat-value" id="total-species">53</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">📍</div>
+                            <div class="stat-details">
+                                <div class="stat-label">Active Stations</div>
+                                <div class="stat-value" id="active-stations-count">4</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-details">
+                                <div class="stat-label">Hotspots</div>
+                                <div class="stat-value" id="hotspot-count">2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-details-card">
+                    <h3>📋 Selection Details</h3>
+                    <div class="selection-info" id="selection-info">
+                        <div class="no-selection">
+                            <div class="placeholder-icon">🗺️</div>
+                            <p>Click on a station marker to view detailed information</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Explorer Section -->
+        <section id="data-explorer" class="content-section">
+            <div class="section-header">
+                <h2>🔬 Interactive Data Explorer</h2>
+                <div class="section-controls">
+                    <div class="search-container">
+                        <input type="text" id="global-search" class="form-control" placeholder="Search across all data types...">
+                        <button class="search-btn" id="search-btn">🔍</button>
+                    </div>
+                    <button class="btn btn--primary" id="advanced-filter-btn">Advanced Filters</button>
+                </div>
+            </div>
+
+            <div class="explorer-grid">
+                <div class="explorer-card">
+                    <h3>📊 Measurement Data</h3>
+                    <div class="data-table-container">
+                        <div class="table-controls">
+                            <select id="measurement-station-filter" class="form-control">
+                                <option value="">All Stations</option>
+                            </select>
+                            <select id="measurement-parameter-filter" class="form-control">
+                                <option value="">All Parameters</option>
+                                <option value="temperature">Temperature</option>
+                                <option value="salinity">Salinity</option>
+                                <option value="ph">pH</option>
+                                <option value="oxygen">Dissolved Oxygen</option>
+                            </select>
+                            <button class="btn btn--sm" id="sort-measurements">Sort</button>
+                        </div>
+                        <div class="data-table" id="measurements-table">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explorer-card">
+                    <h3>🧬 eDNA Detections</h3>
+                    <div class="data-table-container">
+                        <div class="table-controls">
+                            <select id="edna-confidence-filter" class="form-control">
+                                <option value="">All Confidence Levels</option>
+                                <option value="high">High (>90%)</option>
+                                <option value="medium">Medium (70-90%)</option>
+                                <option value="low">Low (<70%)</option>
+                            </select>
+                            <button class="btn btn--sm" id="sort-edna">Sort by Confidence</button>
+                        </div>
+                        <div class="data-table" id="edna-table">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explorer-card">
+                    <h3>🔗 Parameter Correlation</h3>
+                    <div class="correlation-controls">
+                        <select id="param-x" class="form-control">
+                            <option value="temperature">Temperature</option>
+                            <option value="salinity">Salinity</option>
+                            <option value="ph">pH</option>
+                            <option value="oxygen">Dissolved Oxygen</option>
+                        </select>
+                        <span>vs</span>
+                        <select id="param-y" class="form-control">
+                            <option value="salinity">Salinity</option>
+                            <option value="temperature">Temperature</option>
+                            <option value="ph">pH</option>
+                            <option value="oxygen">Dissolved Oxygen</option>
+                        </select>
+                        <button class="btn btn--primary" id="calculate-correlation">Calculate</button>
+                    </div>
+                    <div class="correlation-result" id="correlation-result">
+                        <div class="correlation-value">Select parameters to calculate correlation</div>
+                    </div>
+                </div>
+
+                <div class="explorer-card">
+                    <h3>⏱️ Data Comparison Tool</h3>
+                    <div class="comparison-controls">
+                        <div class="comparison-section">
+                            <label>Dataset A:</label>
+                            <select id="dataset-a" class="form-control">
+                                <option value="">Select dataset...</option>
+                                <option value="recent-measurements">Recent Measurements</option>
+                                <option value="historical-data">Historical Data</option>
+                                <option value="station-specific">Station Specific</option>
+                            </select>
+                        </div>
+                        <div class="comparison-section">
+                            <label>Dataset B:</label>
+                            <select id="dataset-b" class="form-control">
+                                <option value="">Select dataset...</option>
+                                <option value="recent-measurements">Recent Measurements</option>
+                                <option value="historical-data">Historical Data</option>
+                                <option value="station-specific">Station Specific</option>
+                            </select>
+                        </div>
+                        <button class="btn btn--primary" id="compare-datasets">Compare</button>
+                    </div>
+                    <div class="comparison-result" id="comparison-result">
+                        Select two datasets to compare
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Species Manager Section -->
+        <section id="species-manager" class="content-section">
+            <div class="section-header">
+                <h2>🐟 Interactive Species Manager</h2>
+                <div class="section-controls">
+                    <input type="text" id="species-search" class="form-control" placeholder="Search species...">
+                    <select id="conservation-filter" class="form-control">
+                        <option value="">All Conservation Status</option>
+                        <option value="Least Concern">Least Concern</option>
+                        <option value="Near Threatened">Near Threatened</option>
+                        <option value="Vulnerable">Vulnerable</option>
+                        <option value="Endangered">Endangered</option>
+                    </select>
+                    <button class="btn btn--primary" id="add-species-btn">Add Species</button>
+                </div>
+            </div>
+
+            <div class="species-manager-grid">
+                <div class="species-explorer-card">
+                    <h3>🔍 Species Explorer</h3>
+                    <div class="species-grid" id="species-grid">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="species-tools-card">
+                    <h3>🧮 Species Comparison Tool</h3>
+                    <div class="comparison-tool">
+                        <div class="species-selector">
+                            <select id="species-compare-1" class="form-control">
+                                <option value="">Select Species 1...</option>
+                            </select>
+                            <select id="species-compare-2" class="form-control">
+                                <option value="">Select Species 2...</option>
+                            </select>
+                            <button class="btn btn--primary" id="compare-species">Compare</button>
+                        </div>
+                        <div class="comparison-display" id="species-comparison-result">
+                            Select two species to compare their characteristics
+                        </div>
+                    </div>
+                </div>
+
+                <div class="habitat-matcher-card">
+                    <h3>🏠 Habitat Matching Algorithm</h3>
+                    <div class="habitat-input">
+                        <label>Depth Range (m):</label>
+                        <input type="range" id="depth-range" min="0" max="2000" value="100" class="form-control">
+                        <span id="depth-display">100m</span>
+                    </div>
+                    <div class="habitat-input">
+                        <label>Habitat Type:</label>
+                        <select id="habitat-type" class="form-control">
+                            <option value="">Any Habitat</option>
+                            <option value="Coral Reef">Coral Reef</option>
+                            <option value="Pelagic">Pelagic</option>
+                            <option value="Coastal">Coastal</option>
+                            <option value="Benthic">Benthic</option>
+                        </select>
+                    </div>
+                    <button class="btn btn--primary" id="find-matching-species">Find Matching Species</button>
+                    <div class="habitat-results" id="habitat-results">
+                        Adjust parameters to find matching species
+                    </div>
+                </div>
+
+                <div class="population-tracker-card">
+                    <h3>📈 Population Trend Indicator</h3>
+                    <div class="trend-selector">
+                        <select id="species-trend-select" class="form-control">
+                            <option value="">Select species for trend...</option>
+                        </select>
+                        <button class="btn btn--primary" id="show-trend">Show Trend</button>
+                    </div>
+                    <div class="trend-display" id="trend-display">
+                        <div class="trend-chart-placeholder">Select a species to view population trends</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Station Control Section -->
+        <section id="station-control" class="content-section">
+            <div class="section-header">
+                <h2>🎛️ Station Management System</h2>
+                <div class="section-controls">
+                    <select id="region-filter" class="form-control">
+                        <option value="">All Regions</option>
+                        <option value="Indian Ocean">Indian Ocean</option>
+                        <option value="Bay of Bengal">Bay of Bengal</option>
+                        <option value="Arabian Sea">Arabian Sea</option>
+                    </select>
+                    <button class="btn btn--primary" id="refresh-stations">Refresh Status</button>
+                </div>
+            </div>
+
+            <div class="station-grid">
+                <div class="station-overview-card">
+                    <h3>📍 Interactive Station Selector</h3>
+                    <div class="station-map">
+                        <div class="map-placeholder">
+                            <div class="station-marker active" data-station="CMLRE_001" style="top: 60%; left: 70%;">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Station 1</div>
+                            </div>
+                            <div class="station-marker active" data-station="CMLRE_002" style="top: 30%; left: 80%;">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Station 2</div>
+                            </div>
+                            <div class="station-marker maintenance" data-station="CMLRE_003" style="top: 45%; left: 65%;">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Station 3</div>
+                            </div>
+                            <div class="station-marker active" data-station="CMLRE_004" style="top: 55%; left: 40%;">
+                                <div class="marker-dot"></div>
+                                <div class="marker-label">Station 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="station-details-card">
+                    <h3>📊 Station Details</h3>
+                    <div class="station-info" id="station-info">
+                        <div class="station-placeholder">Click on a station marker to view details</div>
+                    </div>
+                </div>
+
+                <div class="equipment-status-card">
+                    <h3>🔧 Equipment Status Monitor</h3>
+                    <div class="equipment-list" id="equipment-list">
+                        <div class="equipment-item">
+                            <div class="equipment-icon">🌡️</div>
+                            <div class="equipment-info">
+                                <div class="equipment-name">CTD Sensor</div>
+                                <div class="equipment-status status-online">Online</div>
+                                <div class="equipment-last-check">Last check: 2 hours ago</div>
+                            </div>
+                            <button class="btn btn--sm">Calibrate</button>
+                        </div>
+                        <div class="equipment-item">
+                            <div class="equipment-icon">🌊</div>
+                            <div class="equipment-info">
+                                <div class="equipment-name">ADCP</div>
+                                <div class="equipment-status status-online">Online</div>
+                                <div class="equipment-last-check">Last check: 1 hour ago</div>
+                            </div>
+                            <button class="btn btn--sm">Test</button>
+                        </div>
+                        <div class="equipment-item">
+                            <div class="equipment-icon">💡</div>
+                            <div class="equipment-info">
+                                <div class="equipment-name">Fluorometer</div>
+                                <div class="equipment-status status-warning">Needs Attention</div>
+                                <div class="equipment-last-check">Last check: 6 hours ago</div>
+                            </div>
+                            <button class="btn btn--sm">Schedule</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="maintenance-scheduler-card">
+                    <h3>📅 Maintenance Scheduler</h3>
+                    <div class="schedule-form">
+                        <select id="maintenance-station" class="form-control">
+                            <option value="">Select Station...</option>
+                        </select>
+                        <select id="maintenance-type" class="form-control">
+                            <option value="">Maintenance Type...</option>
+                            <option value="calibration">Sensor Calibration</option>
+                            <option value="cleaning">Equipment Cleaning</option>
+                            <option value="repair">Repair Work</option>
+                            <option value="upgrade">System Upgrade</option>
+                        </select>
+                        <input type="date" id="maintenance-date" class="form-control">
+                        <button class="btn btn--primary" id="schedule-maintenance">Schedule</button>
+                    </div>
+                    <div class="upcoming-maintenance" id="upcoming-maintenance">
+                        <div class="maintenance-item">
+                            <div class="maintenance-date">Dec 20, 2023</div>
+                            <div class="maintenance-details">CTD Calibration - Station 3</div>
+                        </div>
+                        <div class="maintenance-item">
+                            <div class="maintenance-date">Dec 22, 2023</div>
+                            <div class="maintenance-details">Equipment Cleaning - Station 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Hub Section -->
+        <section id="analytics" class="content-section">
+            <div class="section-header">
+                <h2>📈 Advanced Analytics Hub</h2>
+                <div class="section-controls">
+                    <select id="time-period" class="form-control">
+                        <option value="24h">Last 24 Hours</option>
+                        <option value="7d">Last 7 Days</option>
+                        <option value="30d">Last 30 Days</option>
+                        <option value="90d">Last 90 Days</option>
+                    </select>
+                    <button class="btn btn--primary" id="run-analysis">Run Analysis</button>
+                </div>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>🎯 Anomaly Detection</h3>
+                    <div class="anomaly-detector">
+                        <div class="detector-controls">
+                            <label>Sensitivity Level:</label>
+                            <input type="range" id="anomaly-sensitivity" min="1" max="5" value="3" class="form-control">
+                            <span id="sensitivity-label">Normal</span>
+                        </div>
+                        <button class="btn btn--primary" id="detect-anomalies">Detect Anomalies</button>
+                        <div class="anomaly-results" id="anomaly-results">
+                            <div class="anomaly-placeholder">Run detection to identify data anomalies</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <h3>📊 Data Quality Assessment</h3>
+                    <div class="quality-assessment">
+                        <div class="quality-metrics">
+                            <div class="quality-metric">
+                                <div class="metric-label">Completeness</div>
+                                <div class="metric-value">94.2%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 94.2%"></div>
+                                </div>
+                            </div>
+                            <div class="quality-metric">
+                                <div class="metric-label">Accuracy</div>
+                                <div class="metric-value">97.8%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 97.8%"></div>
+                                </div>
+                            </div>
+                            <div class="quality-metric">
+                                <div class="metric-label">Consistency</div>
+                                <div class="metric-value">91.5%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 91.5%"></div>
+                                </div>
+                            </div>
+                            <div class="quality-metric">
+                                <div class="metric-label">Timeliness</div>
+                                <div class="metric-value">98.9%</div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 98.9%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary" id="refresh-quality">Refresh Assessment</button>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <h3>📈 Trend Analysis</h3>
+                    <div class="trend-analysis">
+                        <div class="trend-controls">
+                            <select id="trend-parameter" class="form-control">
+                                <option value="temperature">Temperature</option>
+                                <option value="salinity">Salinity</option>
+                                <option value="ph">pH</option>
+                                <option value="oxygen">Dissolved Oxygen</option>
+                                <option value="species-count">Species Count</option>
+                            </select>
+                            <select id="trend-timeframe" class="form-control">
+                                <option value="daily">Daily Trends</option>
+                                <option value="weekly">Weekly Trends</option>
+                                <option value="monthly">Monthly Trends</option>
+                                <option value="seasonal">Seasonal Trends</option>
+                            </select>
+                            <button class="btn btn--primary" id="analyze-trend">Analyze</button>
+                        </div>
+                        <div class="trend-results" id="trend-results">
+                            <div class="trend-placeholder">Select parameters to analyze trends</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analytics-card">
+                    <h3>🔮 Predictive Insights</h3>
+                    <div class="prediction-engine">
+                        <div class="prediction-controls">
+                            <label>Prediction Model:</label>
+                            <select id="prediction-model" class="form-control">
+                                <option value="temperature-forecast">Temperature Forecast</option>
+                                <option value="species-migration">Species Migration</option>
+                                <option value="bloom-prediction">Algal Bloom Prediction</option>
+                                <option value="equipment-failure">Equipment Failure Risk</option>
+                            </select>
+                            <button class="btn btn--primary" id="generate-prediction">Generate Prediction</button>
+                        </div>
+                        <div class="prediction-results" id="prediction-results">
+                            <div class="prediction-placeholder">Select a model to generate predictions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Center Section -->
+        <section id="reports" class="content-section">
+            <div class="section-header">
+                <h2>📄 Automated Report Center</h2>
+                <div class="section-controls">
+                    <button class="btn btn--primary" id="create-custom-report">Create Custom Report</button>
+                    <button class="btn btn--secondary" id="schedule-report">Schedule Report</button>
+                </div>
+            </div>
+
+            <div class="reports-grid">
+                <div class="report-builder-card">
+                    <h3>🛠️ Custom Report Builder</h3>
+                    <div class="report-builder">
+                        <div class="builder-section">
+                            <label>Report Title:</label>
+                            <input type="text" id="report-title" class="form-control" placeholder="Enter report title...">
+                        </div>
+                        <div class="builder-section">
+                            <label>Data Sources:</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" id="include-measurements" checked> Oceanographic Measurements</label>
+                                <label><input type="checkbox" id="include-species"> Species Data</label>
+                                <label><input type="checkbox" id="include-edna"> eDNA Results</label>
+                                <label><input type="checkbox" id="include-stations"> Station Status</label>
+                            </div>
+                        </div>
+                        <div class="builder-section">
+                            <label>Time Range:</label>
+                            <select id="report-timerange" class="form-control">
+                                <option value="last-week">Last Week</option>
+                                <option value="last-month">Last Month</option>
+                                <option value="last-quarter">Last Quarter</option>
+                                <option value="custom">Custom Range</option>
+                            </select>
+                        </div>
+                        <div class="builder-section">
+                            <label>Output Format:</label>
+                            <select id="report-format" class="form-control">
+                                <option value="pdf">PDF Document</option>
+                                <option value="excel">Excel Spreadsheet</option>
+                                <option value="html">HTML Report</option>
+                                <option value="json">JSON Data</option>
+                            </select>
+                        </div>
+                        <button class="btn btn--primary" id="generate-custom-report">Generate Report</button>
+                    </div>
+                </div>
+
+                <div class="report-templates-card">
+                    <h3>📋 Report Templates</h3>
+                    <div class="template-list">
+                        <div class="template-item">
+                            <div class="template-info">
+                                <div class="template-name">Daily Water Quality Summary</div>
+                                <div class="template-desc">Comprehensive daily overview of all water parameters</div>
+                            </div>
+                            <button class="btn btn--sm" data-template="daily-quality">Use Template</button>
+                        </div>
+                        <div class="template-item">
+                            <div class="template-info">
+                                <div class="template-name">Weekly Species Report</div>
+                                <div class="template-desc">Species detection and population analysis</div>
+                            </div>
+                            <button class="btn btn--sm" data-template="weekly-species">Use Template</button>
+                        </div>
+                        <div class="template-item">
+                            <div class="template-info">
+                                <div class="template-name">Monthly Station Performance</div>
+                                <div class="template-desc">Equipment status and data collection metrics</div>
+                            </div>
+                            <button class="btn btn--sm" data-template="monthly-stations">Use Template</button>
+                        </div>
+                        <div class="template-item">
+                            <div class="template-info">
+                                <div class="template-name">Quarterly Ecosystem Health</div>
+                                <div class="template-desc">Biodiversity indices and ecosystem trends</div>
+                            </div>
+                            <button class="btn btn--sm" data-template="quarterly-ecosystem">Use Template</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scheduled-reports-card">
+                    <h3>⏰ Scheduled Reports</h3>
+                    <div class="scheduled-list" id="scheduled-list">
+                        <div class="scheduled-item">
+                            <div class="schedule-info">
+                                <div class="schedule-name">Daily Water Quality</div>
+                                <div class="schedule-frequency">Every day at 6:00 AM</div>
+                                <div class="schedule-recipients">marine-team@cmlre.gov.in</div>
+                            </div>
+                            <div class="schedule-actions">
+                                <button class="btn btn--sm">Edit</button>
+                                <button class="btn btn--sm">Disable</button>
+                            </div>
+                        </div>
+                        <div class="scheduled-item">
+                            <div class="schedule-info">
+                                <div class="schedule-name">Weekly Species Summary</div>
+                                <div class="schedule-frequency">Every Monday at 9:00 AM</div>
+                                <div class="schedule-recipients">research-dept@cmlre.gov.in</div>
+                            </div>
+                            <div class="schedule-actions">
+                                <button class="btn btn--sm">Edit</button>
+                                <button class="btn btn--sm">Disable</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary" id="add-scheduled-report">Add Schedule</button>
+                </div>
+
+                <div class="export-center-card">
+                    <h3>💾 Export & Import Center</h3>
+                    <div class="export-section">
+                        <h4>Export Data</h4>
+                        <select id="export-dataset" class="form-control">
+                            <option value="all">All Data</option>
+                            <option value="measurements">Measurements Only</option>
+                            <option value="species">Species Catalog</option>
+                            <option value="edna">eDNA Results</option>
+                            <option value="stations">Station Information</option>
+                        </select>
+                        <button class="btn btn--primary" id="export-data">Export Data</button>
+                    </div>
+                    <div class="import-section">
+                        <h4>Import Data</h4>
+                        <div class="file-upload-area" id="import-dropzone">
+                            <div class="upload-icon">📁</div>
+                            <p>Drag and drop files here or click to browse</p>
+                            <input type="file" id="import-file" multiple accept=".csv,.json,.xlsx">
+                        </div>
+                        <div class="import-progress hidden" id="import-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">Importing data...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Advanced Filter Modal -->
+    <div id="advanced-filter-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Advanced Data Filters</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-group">
+                    <label>Date Range:</label>
+                    <input type="date" id="filter-date-start" class="form-control">
+                    <span>to</span>
+                    <input type="date" id="filter-date-end" class="form-control">
+                </div>
+                <div class="filter-group">
+                    <label>Temperature Range (°C):</label>
+                    <input type="number" id="temp-min" class="form-control" placeholder="Min">
+                    <input type="number" id="temp-max" class="form-control" placeholder="Max">
+                </div>
+                <div class="filter-group">
+                    <label>Data Quality:</label>
+                    <select id="quality-filter" class="form-control">
+                        <option value="">All Quality Levels</option>
+                        <option value="excellent">Excellent</option>
+                        <option value="good">Good</option>
+                        <option value="questionable">Questionable</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="clear-filters">Clear Filters</button>
+                <button class="btn btn--primary" id="apply-filters">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Species Modal -->
+    <div id="species-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Species</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Scientific Name</label>
+                    <input type="text" id="scientific-name" class="form-control" placeholder="e.g., Thunnus albacares">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Common Name</label>
+                    <input type="text" id="common-name" class="form-control" placeholder="e.g., Yellowfin Tuna">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Family</label>
+                    <input type="text" id="family-name" class="form-control" placeholder="e.g., Scombridae">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Conservation Status</label>
+                    <select id="conservation-status" class="form-control">
+                        <option value="Least Concern">Least Concern</option>
+                        <option value="Near Threatened">Near Threatened</option>
+                        <option value="Vulnerable">Vulnerable</option>
+                        <option value="Endangered">Endangered</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="cancel-species">Cancel</button>
+                <button class="btn btn--primary" id="save-species">Save Species</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Species Image Modal -->
+    <div id="species-image-modal" class="modal hidden">
+        <div class="modal-content species-image-modal-content">
+            <div class="modal-header">
+                <h3 id="species-modal-title">Species Image</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="species-image-large" id="species-image-large">
+                    <div class="large-species-emoji">🐟</div>
+                </div>
+                <div class="species-image-info" id="species-image-info">
+                    <h4 class="species-scientific-large">Scientific Name</h4>
+                    <p class="species-common-large">Common Name</p>
+                    <div class="species-details-grid">
+                        <div class="detail-row">
+                            <span class="detail-label">Family:</span>
+                            <span class="detail-value" id="modal-family">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Conservation Status:</span>
+                            <span class="detail-value" id="modal-status">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Habitat:</span>
+                            <span class="detail-value" id="modal-habitat">-</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Commercial Value:</span>
+                            <span class="detail-value" id="modal-commercial">-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <div class="loading-text">Processing...</div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <span id="toast-message"></span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
